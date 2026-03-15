@@ -70,6 +70,14 @@ Config rules continuously scan your AWS environment and flag anything that viola
 - **CIS Benchmark:** CIS 1.5
 - **NIST Control:** IA-2 (Identification and Authentication)
 
+### Config Rule 4: cloud-trail-encryption-enabled
+- **What it checks:** Whether CloudTrail logs are encrypted using KMS
+- **Result if violated:** NON_COMPLIANT
+- **Current status:** Noncompliant — KMS key not yet configured (cost consideration)
+- **Recommended action:** Create KMS key and attach to org-audit-trail for production deployment
+- **CIS Benchmark:** CIS 3.7
+- **NIST Control:** AU-9 (Protection of Audit Information)
+
 ---
 
 ## Compliance Mapping Summary
@@ -83,6 +91,7 @@ Config rules continuously scan your AWS environment and flag anything that viola
 | S3 public read check | Detective Config | CIS 2.1.5 | SC-7 |
 | CloudTrail enabled check | Detective Config | CIS 3.1 | AU-2 |
 | Root MFA check | Detective Config | CIS 1.5 | IA-2 |
+| CloudTrail encryption | Detective Config | CIS 3.7 | AU-9 |
 
 ---
 
