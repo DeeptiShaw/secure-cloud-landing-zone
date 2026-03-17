@@ -9,17 +9,8 @@
         "s3:PutBucketPolicy",
         "s3:PutAccountPublicAccessBlock",
         "s3:PutBucketPublicAccessBlock",
-        "s3:DeletePublicAccessBlock"
       ],
-      "Resource": "*",
-      "Condition": {
-        "ArnNotLike": {
-          "aws:PrincipalARN": [
-            "arn:aws:iam::*:role/AdminRole",
-            "arn:aws:iam::*:role/SecurityBreakGlassRole"
-          ]
-        }
-      }
+      "Resource": "*"
     }
   ]
 }
