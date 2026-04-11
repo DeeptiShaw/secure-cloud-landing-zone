@@ -1,0 +1,36 @@
+{
+  "name": "secure-cloud-landing-zone",
+  "version": "1.0.0",
+  "description": "Enterprise Secure AWS Cloud Landing Zone with Dashboard and Backend",
+  "main": "landing-server.js",
+  "scripts": {
+    "start": "concurrently \"npm run start:landing\" \"npm run start:backend\" \"npm run start:frontend\"",
+    "dev": "concurrently \"npm run dev:landing\" \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:landing": "node landing-server.js",
+    "dev:frontend": "cd dashboard && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "start:landing": "cross-env NODE_ENV=production node landing-server.js",
+    "start:frontend": "cd dashboard && npm run start",
+    "start:backend": "cd backend && npm start",
+    "build": "cd dashboard && npm run build",
+    "lint": "cd dashboard && npm run lint",
+    "install:all": "npm install && cd dashboard && npm install && cd ../backend && npm install",
+    "setup": "npm run install:all && npm run build"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "cross-env": "^10.1.0"
+  },
+  "keywords": [
+    "aws",
+    "landing-zone",
+    "security",
+    "cloud",
+    "terraform"
+  ],
+  "author": "Secure Cloud Team",
+  "license": "Apache-2.0"
+}

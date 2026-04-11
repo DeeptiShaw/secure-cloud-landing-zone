@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+/* CSS Variables for Dark/Light Theme */
+:root {
+  --bg: #0a0e1a;
+  --bg-secondary: #0f172a;
+  --surface: #111827;
+  --surface-secondary: #1f2937;
+  --surface-strong: rgba(15, 23, 42, 0.95);
+  --surface-hover: rgba(148, 163, 184, 0.08);
+  --nav: rgba(15, 23, 42, 0.92);
+  --text: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #cbd5e1;
+  --border: rgba(148, 163, 184, 0.16);
+  --border-secondary: rgba(148, 163, 184, 0.24);
+  --accent: #3b82f6;
+  --accent-text: #dbeafe;
+  --accent-border: #60a5fa;
+  --accent-soft: rgba(59, 130, 246, 0.14);
+  --accent-strong: #bfdbfe;
+  --success-bg: #134e4a;
+  --success-text: #22c55e;
+  --success-border: #2dd4bf;
+  --error-bg: #7f1d1d;
+  --error-text: #f87171;
+  --error-border: #ef4444;
+  --error-accent: #fca5a5;
+  --warning-bg: #78350f;
+  --warning-text: #fbbf24;
+  --warning-border: #f59e0b;
+  --shadow: 0 28px 80px -40px rgba(0, 0, 0, 0.65);
+  color-scheme: dark;
+}
+
+.dark {
+  --bg: #0a0e1a;
+  --bg-secondary: #0f172a;
+  --surface: #111827;
+  --surface-secondary: #1f2937;
+  --surface-strong: rgba(15, 23, 42, 0.95);
+  --surface-hover: rgba(148, 163, 184, 0.08);
+  --nav: rgba(15, 23, 42, 0.92);
+  --text: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #cbd5e1;
+  --border: rgba(148, 163, 184, 0.16);
+  --border-secondary: rgba(148, 163, 184, 0.24);
+  --accent: #3b82f6;
+  --accent-text: #dbeafe;
+  --accent-border: #60a5fa;
+  --accent-soft: rgba(59, 130, 246, 0.14);
+  --accent-strong: #bfdbfe;
+  --success-bg: #134e4a;
+  --success-text: #22c55e;
+  --success-border: #2dd4bf;
+  --error-bg: #7f1d1d;
+  --error-text: #f87171;
+  --error-border: #ef4444;
+  --error-accent: #fca5a5;
+  --warning-bg: #78350f;
+  --warning-text: #fbbf24;
+  --warning-border: #f59e0b;
+  --shadow: 0 28px 80px -40px rgba(0, 0, 0, 0.65);
+  color-scheme: dark;
+}
+
+.light {
+  --bg: #f8fafc;
+  --bg-secondary: #ffffff;
+  --surface: #ffffff;
+  --surface-secondary: #e2e8f0;
+  --surface-strong: rgba(255, 255, 255, 0.95);
+  --surface-hover: rgba(15, 23, 42, 0.06);
+  --nav: rgba(255, 255, 255, 0.96);
+  --text: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --border: rgba(148, 163, 184, 0.28);
+  --border-secondary: rgba(203, 213, 225, 0.55);
+  --accent: #2563eb;
+  --accent-text: #1d4ed8;
+  --accent-border: #3b82f6;
+  --accent-soft: rgba(59, 130, 246, 0.12);
+  --accent-strong: #1e40af;
+  --success-bg: #dcfce7;
+  --success-text: #166534;
+  --success-border: #16a34a;
+  --error-bg: #fee2e2;
+  --error-text: #991b1b;
+  --error-border: #ef4444;
+  --error-accent: #fca5a5;
+  --warning-bg: #fef3c7;
+  --warning-text: #92400e;
+  --warning-border: #f59e0b;
+  --shadow: 0 20px 60px -28px rgba(15, 23, 42, 0.15);
+  color-scheme: light;
+}
+
+.theme-transition {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+html, body {
+  min-height: 100%;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+body {
+  background-image: radial-gradient(circle at top left, rgba(59, 130, 246, 0.12), transparent 24%), radial-gradient(circle at bottom right, rgba(168, 85, 247, 0.08), transparent 30%);
+}
+
+.glass-card {
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  box-shadow: 0 24px 80px -40px rgba(0, 0, 0, 0.65);
+}
+
+.glass-panel {
+  background: rgba(15, 23, 42, 0.96);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-right: 1px solid var(--border);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-secondary);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton {
+  animation: shimmer 1.8s linear infinite;
+  background: linear-gradient(90deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.04) 100%);
+  background-size: 200% 100%;
+}
+
+
